@@ -24,3 +24,8 @@ class Either(Monad):
             return self
         else:
             return f(self.value)
+
+    def __repr__(self):
+        if self.status is Either.Left:
+            return f"Left {self.value}"
+        return f"Right {self.value}"
